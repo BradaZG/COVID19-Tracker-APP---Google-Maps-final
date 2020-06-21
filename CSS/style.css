@@ -1,0 +1,402 @@
+body {
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+}
+
+.big-heading {
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.container-fluid {
+  padding: 7% 15%;
+}
+
+#title {
+  background-color: #ff4c68;
+  color: #fff;
+  text-align: left;
+}
+
+#title .container-fluid {
+  padding: 3% 15% 7%;
+}
+
+.colored-section {
+  background-color: #ff4c68;
+}
+
+.white-section {
+  background-color: #fff;
+}
+
+/* Navigation Bar */
+
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* Buttons */
+
+.download-button {
+  margin: 5% 3% 5% 0;
+}
+
+.title-image {
+  width: 100%;
+  transform: rotate(10deg);
+  position: absolute;
+  right: 0%;
+  top: 15%;
+  border-radius: 30px;
+  opacity: 0.9;
+}
+
+.search {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+#search-country {
+  border-radius: 4px;
+  border: 1px solid black;
+  padding-left: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+#search-icon {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-left: 5px;
+}
+
+.map-info {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+#map {
+  width: 100%;
+  height: 600px;
+}
+
+.country-stats {
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  right: 2%;
+  top: 100px;
+  min-width: 120px;
+  width: 15%;
+  height: 40%;
+  border-radius: 10px;
+  color: #000;
+  font-weight: 400;
+  font-size: 2vmin;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 10 0 10;
+  opacity: 0.8;
+}
+
+#country {
+  margin: 0;
+  font-size: 2vmin;
+}
+
+#start-message {
+  font-size: 1.5vmin;
+}
+
+#flag {
+  display: flex;
+  justify-content: center;
+}
+
+#flag img {
+  width: 50%;
+}
+
+.global-stats {
+  width: 70%;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  overflow: hidden;
+  color: #000;
+  text-align: center;
+  font-weight: 400;
+  font-size: 2vmin;
+  position: absolute;
+  bottom: 50px;
+  padding-bottom: 5px;
+  opacity: 0.8;
+}
+
+.global-stats h3 {
+  margin: 0;
+  padding: 5px;
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.global-stats-container {
+  display: flex;
+  width: 100%;
+}
+
+#total-cases {
+  flex: 1;
+}
+
+#total-deaths {
+  flex: 1;
+}
+
+#total-recoveries {
+  flex: 1;
+}
+
+.data-info,
+.graph-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#warnings {
+  position: relative;
+}
+
+.warning-title {
+  font-size: 1.5rem;
+  color: #ff4c68;
+}
+
+.warning-box {
+  padding: 4.5%;
+}
+
+.icon {
+  color: #ef8172;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.icon:hover {
+  color: #ff4c68;
+}
+
+#footer .container-fluid a {
+  color: #fff;
+}
+
+.country-data-table,
+.chart-container {
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.tableCountry {
+  cursor: pointer;
+}
+
+.country-data-table thead th {
+  position: sticky;
+  top: 0;
+}
+
+tbody {
+  color: black;
+}
+
+table.dataTable.no-footer {
+  border-bottom: none;
+}
+
+th {
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+#table_length select,
+#table_filter input {
+  cursor: pointer;
+}
+
+tbody tr td:first-child {
+  cursor: pointer;
+}
+
+table.dataTable {
+  border-collapse: none;
+}
+
+table.dataTable,
+table.dataTable th,
+table.dataTable td {
+  box-sizing: border-box;
+}
+
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+  background-color: #f4f4f4;
+}
+
+table.dataTable.display tbody tr.odd > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
+  background-color: #f4f4f4;
+}
+
+table.dataTable.stripe tbody tr.even,
+table.dataTable.display tbody tr.even {
+  background-color: #c9c9c9;
+}
+
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+  background-color: #c9c9c9;
+}
+
+#myChart {
+  width: 100%;
+}
+
+.graph-title {
+  margin-bottom: 40px;
+}
+
+.chart-container {
+  height: 490px;
+  display: flex;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 100px;
+}
+
+.table-title {
+  margin-bottom: 20px;
+}
+
+.my-custom-scrollbar {
+  position: relative;
+  height: 611px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.my-custom-scrollbar::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+#copy {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icon {
+  margin: 20px 10px;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 1028px) {
+  #title {
+    text-align: center;
+  }
+
+  .title-image {
+    position: static;
+    transform: rotate(0);
+  }
+
+  .big-heading {
+    font-size: 2.3rem;
+  }
+
+  .navbar-brand {
+    font-size: 2.2rem;
+  }
+
+  .graph-info {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 769px) {
+  .container-fluid {
+    padding: 7% 1%;
+  }
+
+  .my-custom-scrollbar {
+    height: 631px;
+  }
+
+  .data-info {
+    margin-top: 50px;
+  }
+
+  .graph-info {
+    margin-top: 50px;
+  }
+
+  .navbar-brand {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 615px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .navbar-brand {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID19 Tracker APP</title>
+    <link rel="icon" href="Images/favicon.ico" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,400,800,900|Ubuntu:400,700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fe499f66d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <section class="colored-section" id="title">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="index.html">COVID19 Tracker APP</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#table-graph">Data & statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.who.int/health-topics/coronavirus#tab=tab_1" target="_blank">About COVID19</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="big-heading">Check out current country and global data on COVID19.</h1>
+                    <button type="button" class="btn btn-dark btn-lg download-button"><i class="fab fa-apple"></i>
+                        Download</button>
+                    <button type="button" class="btn btn-outline-light btn-lg download-button"><i
+                            class="fab fa-google-play"></i>
+                        Download</button>
+                </div>
+
+                <div class="col-lg-6">
+                    <img class="title-image" src="Images/Covid.jpg" alt="iphone-mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="white-section" id="warnings">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="warning-box col-lg-4">
+                    <i class="icon fas fa-people-arrows fa-4x" onmouseover="biggerIcon(this)"
+                        onmouseout="normalIcon(this)"></i>
+                    <h3 class="warning-title">Keep the distance!</h3>
+                </div>
+
+                <div class="warning-box col-lg-4">
+                    <i class="icon fas fa-laptop-house fa-4x" onmouseover="biggerIcon(this)" onmouseout="
+                        normalIcon(this)"></i>
+                    <h3 class="warning-title">Stay at home!</h3>
+                </div>
+
+                <div class="warning-box col-lg-4">
+                    <i class="icon fas fa-hands-wash fa-4x" onmouseover="biggerIcon(this)" onmouseout="
+                        normalIcon(this)"></i>
+                    <h3 class="warning-title">Wash your hands!</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="colored-section" id="map-container">
+        <div class="container-fluid">
+            <div class="search">
+                <input id="search-country" type="text" placeholder="Type a country name" onkeyup="onEnter(event)" />
+                <i id="search-icon" class="fas fa-search fa-flip-horizontal" onclick="getCountryData()"></i>
+            </div>
+            <div class="map-info">
+                <div id="map"></div>
+                <div class="country-stats">
+                    <h3 id="country"></h3>
+                    <div id="flag"></div>
+                    <div id="today-country-cases"><h5 id='start-message'>CLICK ON A COUNTRY MARKER TO GET THE SELECTED COUNTRY DATA FOR LAST 24h (or use search)</h5></div>
+                    <div id="today-country-deaths"></div>
+                    <div id="active-cases"></div>
+                </div>
+                <div class="global-stats">
+                    <h3>GLOBAL STATS</h3>
+                    <div class="global-stats-container">
+                    <div id="total-cases"></div>
+                    <div id="total-deaths"></div>
+                    <div id="total-recoveries"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="white-section" id="table-graph">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="data-info">
+                        <h3 class="table-title">CURRENT COUNTRY STATS:</h3>
+                        <div class="country-data-table my-custom-scrollbar">
+                            <table id="table" class="table-hover display table table-striped table-bordered" width="100%">
+                                <!--<thead>
+                                    <tr id="table-head">
+                                        <th scope="col">Country Name</th>
+                                        <th scope="col">Cases</th>
+                                        <th scope="col">Recovered</th>
+                                        <th scope="col">Deaths</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-data"></tbody>-->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="graph-info">
+                        <h3 class="graph-title">LAST MONTH DATA:</h3>
+                        <div class="chart-container">
+                            <h4 id="tableCountry"></h4>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <footer class="colored-section" id="footer">
+        <div class="container-fluid">
+            <a href="https://www.facebook.com/bradaZG" target="_blank"><i class="social-icon fab fa-facebook"></i></a>
+            <a href="https://twitter.com/bradaZG" target="_blank"><i class="social-icon fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/bradazg/" target="_blank"><i class="social-icon fab fa-linkedin-in"></i></a>
+            <a href="mailto:bradazg@gmail.com" target="_blank"><i class="social-icon fas fa-envelope"></i></a>
+            <p id="copy">© Copyright 2020 BradaZG</p>
+        </div>
+    </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type='text/javascript' src="JS/map-style.js"></script>
+    <script type='text/javascript' src="JS/config.js"></script>
+    <script type='text/javascript' src="JS/script.js"></script>
+</body>
+</html>
