@@ -84,8 +84,10 @@
     <section class="colored-section" id="map-container">
         <div class="container-fluid">
             <div class="search">
-                <input id="search-country" type="text" placeholder="Type a country name" onkeyup="onEnter(event)" />
-                <i id="search-icon" class="fas fa-search fa-flip-horizontal" onclick="getCountryData()"></i>
+                <div class="search-container">
+                    <input id="search-country" type="text" placeholder="Type a country name" onkeyup="onEnter(event)" />
+                    <i id="search-icon" class="fas fa-search fa-flip-horizontal" onclick="getCountryData()"></i>
+                </div>
             </div>
             <div class="map-info">
                 <div id="map"></div>

@@ -41,7 +41,7 @@ const normalIcon = (elem) => {
 };
 
 const getCountryMarkers = () => {
-  const FULL_URL = "https://corona.lmao.ninja/v2/countries?yesterday=&sort=";
+  const FULL_URL = "https://corona.lmao.ninja/v2/countries?yesterday&sort";
 
   const globalPromise = fetch(FULL_URL);
 
@@ -56,7 +56,7 @@ const getCountryMarkers = () => {
 };
 
 const getGlobalData = () => {
-  const FULL_URL = `${URL}all?yesterday=`;
+  const FULL_URL = `${URL}all?yesterday`;
 
   const globalPromise = fetch(FULL_URL);
 
@@ -262,19 +262,19 @@ const myChartFunc = (data) => {
           borderWidth: 2,
         },
         {
-          label: "Deaths",
+          label: "Recovered",
           backgroundColor: "rgba(255, 76, 104, 0.5)",
           borderColor: "rgba(255, 76, 104, 1)",
           fill: true,
-          data: [...arrDeaths],
+          data: [...arrRecovered],
           borderWidth: 2,
         },
         {
-          label: "Recovered",
+          label: "Deaths",
           backgroundColor: "rgba(201, 201, 201, 0.5)",
           borderColor: "rgba(201, 201, 201, 1)",
           fill: true,
-          data: [...arrRecovered],
+          data: [...arrDeaths],
           borderWidth: 2,
         },
       ],
