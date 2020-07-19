@@ -149,6 +149,7 @@ h6 {
 
 .card-img-top {
   height: 35%;
+  object-fit: contain;
 }
 
 .card-body {
