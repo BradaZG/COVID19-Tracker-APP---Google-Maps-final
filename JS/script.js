@@ -493,6 +493,10 @@ function createMarker(
     infoWindow.open(map, marker);
   });
 
+  google.maps.event.addListener(marker, "mouseout", function () {
+    infoWindow.close();
+  });
+
   markers.push(marker);
 }
 
