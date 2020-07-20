@@ -124,6 +124,14 @@ const getCountryMarkers = (casesType = "") => {
     });
 };
 
+const setMapCenter = (lat, long, zoom) => {
+  map.setZoom(zoom);
+  map.panTo({
+    lat: lat,
+    lng: long,
+  });
+};
+
 const initDropdown = (searchList) => {
   $(".ui.dropdown").dropdown({
     values: searchList,
@@ -196,8 +204,10 @@ const showGlobalData = (globalData) => {
     title = globalData.country;
     document.getElementById("back-global").innerHTML =
       "<span id='back-global-span' onclick='getGlobalData()'>BACK TO GLOBAL STATS</span>";
+    setMapCenter(globalData.countryInfo.lat, globalData.countryInfo.long, 4);
   } else {
     showGlobalMessage();
+    setMapCenter(0, 0, 2);
     document.getElementById("back-global").innerHTML =
       "<span style='visibility: hidden;'>BACK TO GLOBAL STATS</span>";
   }
