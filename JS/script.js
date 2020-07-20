@@ -357,22 +357,22 @@ function createMarker(
   if (casesType === "cases" || casesType === "recovered") {
     if (cases > 1000000) {
       color = "#333333";
-      scale = 17;
+      scale = 18;
     } else if (cases > 500000) {
       color = "#666666";
-      scale = 14;
+      scale = 15;
     } else if (cases > 100000) {
       color = "#943f4c";
-      scale = 12;
+      scale = 13;
     } else if (cases > 50000) {
       color = "#ff4c68";
-      scale = 10;
+      scale = 11;
     } else if (cases > 10000) {
       color = "#e58e9b";
-      scale = 7;
+      scale = 8;
     } else if (cases > 1000) {
       color = "#d9acb2";
-      scale = 5;
+      scale = 6;
     } else {
       color = "#cccccc";
       scale = 4;
@@ -412,22 +412,22 @@ function createMarker(
   } else if (casesType === "deaths") {
     if (cases > 100000) {
       color = "#333333";
-      scale = 17;
+      scale = 18;
     } else if (cases > 50000) {
       color = "#666666";
-      scale = 14;
+      scale = 15;
     } else if (cases > 20000) {
       color = "#943f4c";
-      scale = 12;
+      scale = 13;
     } else if (cases > 5000) {
       color = "#ff4c68";
-      scale = 10;
+      scale = 11;
     } else if (cases > 1000) {
       color = "#e58e9b";
-      scale = 7;
+      scale = 8;
     } else if (cases > 100) {
       color = "#d9acb2";
-      scale = 5;
+      scale = 6;
     } else {
       color = "#cccccc";
       scale = 4;
