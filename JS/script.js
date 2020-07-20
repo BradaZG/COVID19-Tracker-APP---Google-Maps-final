@@ -466,6 +466,10 @@ function createMarker(
   `;
   }
 
+  let html = `<h6 style='font-family: Montserrat'>${name}</h6>
+              <p style='font-family: Montserrat; font-size: smaller; font-weight: 500'>Click for more info</p>        
+                `;
+
   let marker = new google.maps.Marker({
     map: map,
     position: latlng,
@@ -482,6 +486,11 @@ function createMarker(
 
   google.maps.event.addListener(marker, "click", function () {
     getCountryData(name);
+  });
+
+  google.maps.event.addListener(marker, "mouseover", function () {
+    infoWindow.setContent(html);
+    infoWindow.open(map, marker);
   });
 
   markers.push(marker);
