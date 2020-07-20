@@ -29,7 +29,6 @@ numeral.locale("us");
 function move(num) {
   let progress = Math.floor(num);
   document.getElementById("progress-percent").innerText = "0%";
-
   let elem = document.getElementById("myBar");
   let width = 1;
   let id = setInterval(frame, 10);
@@ -43,16 +42,9 @@ function move(num) {
     }
   }
 
-  let progressCount = new CountUp(
-    "progress-percent",
-    0,
-    progress,
-    0,
-    progress / 30,
-    {
-      suffix: "%",
-    }
-  );
+  let progressCount = new CountUp("progress-percent", 0, progress, 0, 0.35, {
+    suffix: "%",
+  });
   progressCount.start();
 }
 
@@ -218,7 +210,7 @@ const showGlobalData = (globalData) => {
     0,
     globalData.todayCases,
     0,
-    2,
+    1.5,
     CountUpOptions
   );
 
@@ -230,7 +222,7 @@ const showGlobalData = (globalData) => {
     0,
     globalData.todayDeaths,
     0,
-    2,
+    1.5,
     CountUpOptions
   );
 
@@ -242,16 +234,16 @@ const showGlobalData = (globalData) => {
     0,
     globalData.todayRecovered,
     0,
-    2,
+    1.5,
     CountUpOptions
   );
 
-  move(precentage);
   setTimeout(() => {
+    move(precentage);
     countTotal.start();
     countDeaths.start();
     countRecovered.start();
-  }, 300);
+  }, 400);
 };
 
 const onEnter = (e) => {
