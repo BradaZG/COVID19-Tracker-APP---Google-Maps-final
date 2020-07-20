@@ -349,9 +349,9 @@ function showCountryMarkers(countries, casesType = "cases") {
       color = "rgb(201, 201, 201)";
     }
     createMarker(latlng, name, casesNum, casesType, title, color, index);
-    bounds.extend(latlng);
+    //bounds.extend(latlng);
   });
-  map.panToBounds(bounds);
+  //map.panToBounds(bounds);
 }
 
 function createMarker(
