@@ -74,6 +74,9 @@ function initMap() {
     },
     zoom: 2,
     styles: mapStyle,
+    mapTypeControl: false,
+    streetViewControl: false,
+    fullscreenControl: false,
   });
   infoWindow = new google.maps.InfoWindow({
     maxWidth: 165,
