@@ -305,7 +305,7 @@ h6 {
 }
 
 .color1 {
-  background-color: #cccccc;
+  background-color: #f1c0c6;
 }
 
 .color2 {
@@ -422,11 +422,11 @@ h6 {
 }
 
 .tabs-container .deaths:hover .tab-selection {
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(153, 153, 153);
 }
 
 .deaths.active .tab-selection {
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(153, 153, 153);
 }
 
 .global-title {

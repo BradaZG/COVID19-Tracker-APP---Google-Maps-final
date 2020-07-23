@@ -349,7 +349,7 @@ function showCountryMarkers(countries, casesType = "cases") {
     } else if (casesType === "deaths") {
       casesNum = deaths;
       title = "DEATHS:";
-      color = "rgb(201, 201, 201)";
+      color = "rgb(153, 153, 153)";
     }
     createMarker(latlng, name, casesNum, casesType, title, color, index);
     //bounds.extend(latlng);
@@ -387,7 +387,7 @@ function createMarker(
       color = "#d9acb2";
       scale = 6;
     } else {
-      color = "#cccccc";
+      color = "#f1c0c6";
       scale = 4;
     }
 
@@ -442,7 +442,7 @@ function createMarker(
       color = "#d9acb2";
       scale = 6;
     } else {
-      color = "#cccccc";
+      color = "#f1c0c6";
       scale = 4;
     }
 
@@ -626,7 +626,7 @@ const buildPieChart = (data) => {
           backgroundColor: [
             "rgba(0, 0, 0, 0.9)",
             "rgba(255, 76, 104, 0.9)",
-            "rgba(201, 201, 201, 0.9)",
+            "rgba53, 153, 153, 0.9)",
           ],
         },
       ],
@@ -788,8 +788,8 @@ const myChartFunc = (data) => {
         },
         {
           label: "Deaths",
-          backgroundColor: "rgba(201, 201, 201, 1)",
-          borderColor: "rgba(201, 201, 201, 1)",
+          backgroundColor: "rgba(153, 153, 153, 1)",
+          borderColor: "rgba(153, 153, 153, 1)",
           fill: false,
           data: [...arrDeaths],
           pointRadius: 0,
